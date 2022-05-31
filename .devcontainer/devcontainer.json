@@ -1,6 +1,6 @@
 {
   "name": "basic",
-  "image": "ghcr.io/hankei6km/my-images-codespaces",
+  "image": "ghcr.io/hankei6km/my-images-codespaces:basic",
   "runArgs": [],
   "overrideCommand": false,
 
