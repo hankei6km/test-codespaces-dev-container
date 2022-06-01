@@ -4,7 +4,7 @@ USER root
 
 RUN add-apt-repository -y ppa:alessandro-strada/ppa \
     && apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get install -y google-drive-ocamlfuse gettext-base \
+    && apt-get install -y google-drive-ocamlfuse \
     # clean up
     && apt-get autoremove -y \
     && apt-get clean -y \
