@@ -1,5 +1,7 @@
 FROM ghcr.io/hankei6km/my-images-codespaces:basic
 
+ARG USERNAME=vscode
+
 USER root
 
 RUN add-apt-repository -y ppa:alessandro-strada/ppa \
@@ -14,8 +16,8 @@ RUN add-apt-repository -y ppa:alessandro-strada/ppa \
 
 
 # setup gdfuse in user
-COPY --chown=vscode --chmod=755 mount-gd.sh /home/vscode/mount-gd.sh
+COPY --chown="${USERNAME}" --chmod=755 mount-gd.sh "/home/${USERNAME}/mount-gd.sh"
 USER vscode
-RUN mkdir -p /home/vscode/gdrive \
-    && test /home/vscode/.local/bin || mkdir -p /home/vscode/.local/bin \
-    && mv /home/vscode/mount-gd.sh /home/vscode/.local/bin/mount-gd.sh
+RUN mkdir -p "/home/${USERNAME}/gdrive" \
+    && test "/home/${USERNAME}/.local/bin" || mkdir -p "/home/${USERNAME}/.local/bin" \
+    && mv "/home/${USERNAME}/mount-gd.sh" "/home/${USERNAME}/.local/bin/mount-gd.sh"
