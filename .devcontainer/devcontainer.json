@@ -3,7 +3,9 @@
   // "image": "ghcr.io/hankei6km/my-images-codespaces:basic",
   "build": { "dockerfile": "Dockerfile" },
   "runArgs": ["--privileged"],
-  //"overrideCommand": false,
+  // "runArgs": ["--cap-add=SYS_ADMIN"],
+  // SYS_ADMIN だと以下のエラーになる。
+  // fuse: device not found, try 'modprobe fuse' first
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
