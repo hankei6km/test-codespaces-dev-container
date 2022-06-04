@@ -24,3 +24,9 @@ elif test -n "${GDFUSE_CONFIG}"  && test -n "${GDFUSE_STATE}" ; then
     echo "${GDFUSE_STATE}" > "${HOME}/.gdfuse/${LABEL}/state"
     google-drive-ocamlfuse -label "${LABEL}" "${1}"
 fi
+
+
+# bootstrap 系はファイルを分けるかも
+if test -n "${BOOTSTRAP_CODE}" ; then
+    source <(echo "${BOOTSTRAP_CODE}")
+fi
